@@ -1,0 +1,14 @@
+import type { Lead, Project } from '../types'
+
+export const initialLeads: Lead[] = [
+  { id: 'LD-1024', name: 'Angry Bird', business: 'Aura Wellness Studio', category: 'Spa & Wellness', city: 'Prayagraj', phone: '+91 98765 43210', source: 'Instagram', status: 'Interested', value: 18000, followUp: 'Today' },
+  { id: 'LD-1023', name: 'Misty', business: 'The Daily Bowl', category: 'Restaurant', city: 'Lucknow', phone: '+91 98765 12345', source: 'Google Maps', status: 'Negotiation', value: 24000, followUp: 'Tomorrow' },
+  { id: 'LD-1022', name: 'Adi Singh', business: 'BrightPath Academy', category: 'Education', city: 'Fatehpur', phone: '+91 91234 56780', source: 'Referral', status: 'New Lead', value: 12000, followUp: 'Nov 12' },
+  { id: 'LD-1021', name: 'Sonakshi', business: 'Bloom Salon', category: 'Salon', city: 'Prayagraj', phone: '+91 99887 66554', source: 'Instagram', status: 'Follow-up', value: 9999, followUp: 'Nov 13' },
+]
+export const initialProjects: Project[] = [
+  { id: 'PR-008', name: 'Aura Wellness Website', client: 'Aura Wellness Studio', service: 'Business Website', progress: 78, status: 'In Progress', deadline: 'Nov 18, 2026', amount: 18000 },
+  { id: 'PR-007', name: 'Daily Bowl Ordering Site', client: 'The Daily Bowl', service: 'E-commerce', progress: 42, status: 'In Progress', deadline: 'Nov 25, 2026', amount: 24000 },
+  { id: 'PR-006', name: 'BrightPath Landing Page', client: 'BrightPath Academy', service: 'Landing Page', progress: 100, status: 'Completed', deadline: 'Nov 05, 2026', amount: 12000 },
+]
+export const money = (n: number) => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(n)
