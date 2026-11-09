@@ -1,0 +1,30 @@
+import { Navigate, Route, Routes } from 'react-router-dom'
+import { Layout } from './components/Layout'
+import { Dashboard } from './pages/Dashboard'
+import { Leads } from './pages/Leads'
+import { Projects } from './pages/Projects'
+import { Finance } from './pages/Finance'
+import { Placeholder } from './pages/Placeholder'
+import { Login } from './pages/Login'
+import { firebaseConfigured } from './lib/firebase'
+
+export default function App(){
+ return <Routes>
+  <Route path="/admin/login" element={<Login role="admin"/>}/>
+  <Route path="/client/login" element={<Login role="client"/>}/>
+  <Route path="/client/*" element={<Placeholder title="Client Portal"/>}/>
+  <Route path="/admin" element={<Layout/>}>
+   <Route index element={<Dashboard/>}/>
+   <Route path="leads" element={<Leads/>}/>
+   <Route path="projects" element={<Projects/>}/>
+   <Route path="finance" element={<Finance/>}/>
+   <Route path="clients" element={<Placeholder title="Clients"/>}/>
+   <Route path="tasks" element={<Placeholder title="Tasks & Calendar"/>}/>
+   <Route path="proposals" element={<Placeholder title="Proposals"/>}/>
+   <Route path="reports" element={<Placeholder title="Reports & Analytics"/>}/>
+   <Route path="settings" element={<Placeholder title="Settings"/>}/>
+   <Route path="*" element={<Navigate to="/admin" replace/>}/>
+  </Route>
+  <Route path="*" element={<Navigate to="/admin" replace/>}/>
+ </Routes>
+}

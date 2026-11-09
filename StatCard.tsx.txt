@@ -1,0 +1,4 @@
+import type { ReactNode } from 'react'
+export function StatCard({label,value,change,icon,tone='blue'}:{label:string;value:string;change:string;icon:ReactNode;tone?:string}) {
+  return <div className="stat-card"><div className="stat-top"><span>{label}</span><span className={`stat-icon ${tone}`}>{icon}</span></div><div className="stat-value">{value}</div><div className="stat-change"><b>↗ {change}</b><span> vs last month</span></div></div>
+}

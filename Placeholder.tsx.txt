@@ -1,0 +1,2 @@
+import { Construction } from 'lucide-react'
+export function Placeholder({title}:{title:string}){return <><div className="page-heading"><div><p className="eyebrow">DESTIN OS WORKSPACE</p><h1>{title}</h1><p className="muted">A dedicated workspace for {title.toLowerCase()}.</p></div></div><section className="panel placeholder"><Construction size={30}/><h3>{title} workspace</h3><p className="muted">This module is included in the application structure. Its data workflows will be activated as the connected database modules are implemented and tested.</p></section></>}
